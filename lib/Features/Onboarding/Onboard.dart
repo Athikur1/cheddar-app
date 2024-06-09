@@ -1,5 +1,4 @@
 import 'package:cheddar/Assets/color_chart.dart';
-import 'package:cheddar/Assets/font_styles.dart';
 import 'package:cheddar/Features/Onboarding/Login_Signup_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

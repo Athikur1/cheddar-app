@@ -1,5 +1,3 @@
-import 'package:cheddar/Features/Onboarding/Login_Signup_Page.dart';
-import 'package:cheddar/Features/Onboarding/Onboard.dart';
 import 'package:cheddar/Features/WelcomePage/UI/Welcome_Cheddar_Page.dart';
 import 'package:flutter/material.dart';
 
