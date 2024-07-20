@@ -31,14 +31,15 @@ class _WelcomeCheddarPageState extends State<WelcomeCheddarPage> {
     });
   }
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    precacheImage(myImage.image, context);
-  }
+  // @override
+  // void didChangeDependencies() {
+  //   super.didChangeDependencies();
+  //   precacheImage(myImage.image, context);
+  // }
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       body: SizedBox.expand(
         child: Stack(
@@ -55,7 +56,7 @@ class _WelcomeCheddarPageState extends State<WelcomeCheddarPage> {
               child: Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(color: Colors.black.withOpacity(.3)),
+                decoration: BoxDecoration(color: Colors.black.withOpacity(.6)),
               ),
             ),
             RichText(

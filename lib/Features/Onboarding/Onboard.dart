@@ -1,5 +1,5 @@
 import 'package:cheddar/Assets/color_chart.dart';
-import 'package:cheddar/Features/Onboarding/Login_Signup_Page.dart';
+import 'package:cheddar/Features/Onboarding/Signup_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -29,13 +29,13 @@ class _OnboardingState extends State<Onboarding> with TickerProviderStateMixin {
     _tabController = TabController(length: 3, vsync: this);
   }
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    precacheImage(img1.image, context);
-    precacheImage(img2.image, context);
-    precacheImage(img3.image, context);
-  }
+  // @override
+  // void didChangeDependencies() {
+  //   super.didChangeDependencies();
+  //   precacheImage(img1.image, context);
+  //   precacheImage(img2.image, context);
+  //   precacheImage(img3.image, context);
+  // }
 
   @override
   void dispose() {
@@ -73,7 +73,7 @@ class _OnboardingState extends State<Onboarding> with TickerProviderStateMixin {
                         height: MediaQuery.of(context).size.height,
                         width: MediaQuery.of(context).size.width,
                         decoration:
-                            BoxDecoration(color: Colors.black.withOpacity(.3)),
+                            BoxDecoration(color: Colors.black.withOpacity(.6)),
                       ),
                     ),
                     Padding(
@@ -107,7 +107,7 @@ class _OnboardingState extends State<Onboarding> with TickerProviderStateMixin {
                         height: MediaQuery.of(context).size.height,
                         width: MediaQuery.of(context).size.width,
                         decoration:
-                            BoxDecoration(color: Colors.black.withOpacity(.3)),
+                            BoxDecoration(color: Colors.black.withOpacity(.6)),
                       ),
                     ),
                     Padding(
@@ -125,7 +125,6 @@ class _OnboardingState extends State<Onboarding> with TickerProviderStateMixin {
                 ),
               ),
               //------------------------------------------
-              const LoginSignupPage()
             ],
           ),
           PageIndicator(
@@ -181,8 +180,12 @@ class PageIndicator extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50), color: Colors.white),
             child: IconButton(
                 onPressed: () {
-                  if (currentPageIndex == 2) {
-                    return;
+                  if (currentPageIndex == 1) {
+                    Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(
+                          builder: (context) => const SignupPage()),
+                      (Route<dynamic> route) => false,
+                    );
                   } else {
                     onUpdateCurrentPageIndex(currentPageIndex + 1);
                   }
